@@ -15,7 +15,7 @@ describe "jQuery Raty integration" do
 
   it "pulls in various images" do
     root = File.expand_path('../../..', __FILE__)
-    images = Dir.glob("#{root}/vendor/**/*.png")
+    images = Dir.glob("#{root}/app/**/*.png")
     images.length.must_be :>, 0
 
     images.each do |image|

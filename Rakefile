@@ -45,7 +45,7 @@ include FileUtils
 
 ROOT         = Pathname(File.dirname(__FILE__))
 DOWNLOAD_DIR = ROOT + "tmp/download"
-ASSETS       = ROOT + 'vendor/assets'
+ASSETS       = ROOT + 'app/assets'
 PACKAGE      = "jquery-raty-rails"
 GEMSPEC      = "#{PACKAGE}.gemspec"
 
