@@ -135,9 +135,6 @@ task :copy_raty do
 
   full_js = ASSETS + "javascripts/jquery.raty.js"
   File.open(full_js, "wb") { |f| f.write(js.join('')) }
-
-  min_js = ASSETS + "javascripts/jquery.raty.min.js"
-  minify full_js, min_js
 end
 
 # Download a URL, handling redirects and SSL.
@@ -191,22 +188,6 @@ def unzip(path)
       dest = File.join(DOWNLOAD_DIR, entry.name)
       mkdir_p File.dirname(dest), verbose: false
       zip_file.extract(entry, dest)
-    end
-  end
-end
-
-# Minify JS. Currently expects Google Closure to be installed.
-def minify(input_file, output_file)
-  #require 'uglifier'
-  require 'tempfile'
-
-  puts "Minifying #{input_file} to #{output_file}."
-  Tempfile.open('jquery-raty') do |temp|
-    sh 'closure', input_file.to_s, temp.path
-    temp.rewind
-    File.open(output_file, 'wb') do |out|
-      out.puts "/* Minified by Google Closure */"
-      out.write(temp.read)
     end
   end
 end

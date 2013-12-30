@@ -26,11 +26,9 @@ Then, install the gem by running `bundle install`.
 ### Configure the assets
 
 Modify the [Sprockets manifest][] in your `application.js` file to include
-*one* of the following, depending on whether you want to include the compressed
-Javascript or the uncompressed Javascript:
+the following:
 
     //= require jquery.raty
-    //= require jquery.raty.min
 
 ## Usage
 

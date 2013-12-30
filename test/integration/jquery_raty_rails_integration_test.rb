@@ -7,12 +7,6 @@ describe "jQuery Raty integration" do
     page.text.must_include "$.fn.raty.defaults"
   end
 
-  it "pulls in jquery.raty.min.js" do
-    visit '/assets/jquery.raty.min.js'
-    page.status_code.must_equal 200
-    page.text.must_include "/* Minified"
-  end
-
   it "pulls in various images" do
     root = File.expand_path('../../..', __FILE__)
     images = Dir.glob("#{root}/app/**/*.png")
@@ -23,5 +17,4 @@ describe "jQuery Raty integration" do
       page.status_code.must_equal 200
     end
   end
-
 end
